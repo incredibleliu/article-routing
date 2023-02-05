@@ -1,0 +1,12 @@
+<h2>Article</h2>
+<button type="button" routerLink='/article/trending'> Trending</button>&nbsp;
+<button type="button" routerLink='/article/politics'> Politics</button>&nbsp;
+<button type="button" routerLink='/article/business'> Business</button>&nbsp;
+<button type="button" routerLink='/article/social'> Social</button>&nbsp;
+<button type="button" routerLink='/article/bollywoodHollywood'> Bollywood/Hollywood</button>&nbsp;
+{{router.url}}&nbsp;
+<p *ngIf='router.url.includes("trending")'>Your are in Trending Section</p>
+<p *ngIf='router.url.includes("politics")'>Your are in Politics Section</p>
+<p *ngIf='router.url.includes("business")'>Your are in Business Section</p>
+<p *ngIf='router.url.includes("social")'>Your are in Social Section</p>
+<p *ngIf='router.url.includes("bollywoodHollywood")'>Your are in Bollywood/Hollywood Section</p>

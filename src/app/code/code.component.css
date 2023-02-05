@@ -1,0 +1,69 @@
+/*
+
+  table, th, td {
+    border: 1px solid;
+  }
+
+
+  div {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+table.mat-table {
+  display: table;
+  width: 75%;
+}
+*/
+
+table {
+  width: 100%;
+}
+
+header {
+  background-color: blue;
+}
+
+.w-75 {
+  width: 75%;
+ }
+
+ .small-button {
+  width: 30px;
+  height: 25px;
+  font-size: 12px;
+}
+
+.custom-row {
+  height: 25px;
+}
+
+.span-alert {
+  font-size: 10px;
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+  padding-left:5px;
+}
+
+.list-card{
+  margin-bottom: 0px;
+}
+
+tr.mat-header-row{
+  height: 10px;
+}
+
+tr.mat-mdc-header-cell{
+  height: 10px;
+}
+
+.mat-header-cell {
+  background: red;
+}
+
+.mat-header-row::ng-deep {
+  background-color: black;
+}

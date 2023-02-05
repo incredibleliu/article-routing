@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-table {     overflow: auto;     max-height: 500px;     border: 1px solid black;   }        .mat-header-row{     background: #005173; }
+
+.mat-header-row
+{
+  background-color: black;
+}
+

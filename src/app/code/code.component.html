@@ -1,0 +1,100 @@
+<div>
+    <!--<h1>Code</h1>
+    <button type="button" [routerLink]="/crud/create/">Create new product</button>-->
+    <!--
+    <form [formGroup]="fg" (ngSubmit)="codeCreate()">
+    <div style="text-align:center;">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Code</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input id="codeInput" type="text" formControlName="cd" (keydown)="onKeyDownEvent($event)" (blur)="numberLostfocus($event)"
+                    [style.background-color]="inputValid === 'invalid' ? '#ff5252' : ''">
+                    <input id="codeInput" type="text" formControlName="cd" (keydown)="onKeyDownEvent($event)" (blur)="numberLostfocus($event)"
+                    >
+                </td>
+                <td><button type="submit">Add</button></td>
+            </tr>
+
+            <tr *ngFor="let code of codes">
+                <td>{{code.id}}</td>
+                <td>{{code.value}}</td>
+                <td>
+                    <button type="button" [routerLink]="['/crud/update/', code.id]">Update</button>
+                    <button type="button" (click)="codeService.delete(code.id)">Remove</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    </form>
+    -->
+    
+    <mat-card>
+        <mat-card-header>
+            Code Management
+        </mat-card-header>
+        <mat-card-content class="list-card">
+            <div>
+                <div>
+                    <mat-form-field>
+                      <mat-label>Filter</mat-label>
+                      <input matInput (keyup)="applyFilter($event)" placeholder="Search columns" #input>
+                    </mat-form-field>
+                  </div>
+            </div>
+            <form [formGroup]="fgMat" (ngSubmit)="codeCreateMat()">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef style="height:10px; background-color:'lightseagreen'"> # </th>
+                    <td mat-cell *matCellDef="let element; let i=index" style="width:50px;">
+                        <div *ngIf="i == 0; else elseBlock">                            
+                        </div>
+                        <ng-template #elseBlock> {{i}} </ng-template>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="value">
+                    <th mat-header-cell *matHeaderCellDef style="height:10px; background-color:'lightseagreen'"> Value </th>
+                    <td mat-cell *matCellDef="let element; let i=index" style="width:800px;"> 
+                        <div *ngIf="i == 0; else elseBlock">      
+                            <input matInput formControlName="cd" (blur)="codeLostfocus($event)"><span id="span-alert" class="span-alert"></span>
+                        </div>
+                        <ng-template #elseBlock>{{element.value}}</ng-template>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef style="height:10px; background-color:'lightseagreen'"> action </th>
+                    <td mat-cell *matCellDef="let element; let i=index" style="width:150px;"> 
+                        <div *ngIf="i == 0; else elseBlock">      
+                            <button id="buttonAdd" type="submit" mat-raised-button color="primary" class="small-button">
+                                Add
+                            </button>
+                        </div>
+                        <ng-template #elseBlock>
+                            <button mat-raised-button (click)="codeDelete(element.id)" color="warn" class="small-button">Delete</button>
+                        </ng-template>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; let i=index; columns: displayedColumns;" class="custom-row"></tr>
+                
+            </table>
+            </form>
+        </mat-card-content>
+    </mat-card>
+
+</div>
